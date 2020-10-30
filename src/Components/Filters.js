@@ -13,7 +13,7 @@ const Filters = ({ dispatch }) => {
             <FilterLink filter={todoListFilters.SHOW_ALL}>All</FilterLink>
             <FilterLink filter={todoListFilters.SHOW_ACTIVE}>Active</FilterLink>
             <FilterLink filter={todoListFilters.SHOW_COMPLETED}>Completed</FilterLink>
-            <button onClick={resetList}>Reset</button>
+            <button style={{ marginLeft: '4px' }} onClick={resetList}>Reset</button>
         </div>
     );
 };

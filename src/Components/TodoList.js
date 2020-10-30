@@ -44,8 +44,8 @@ const TodoList = ({ todos, toggleTodo }) => {
 
                         {todo.text}
                         <button onClick={() => toggleTodo(todo.id)} >Complete</button>
-                        <DeleteTodo todoid={todo.id}></DeleteTodo>
-                        <EditTodo todoid={todo.id}></EditTodo>
+                        <DeleteTodo todoId={todo.id}></DeleteTodo>
+                        <EditTodo todoId={todo.id} todoText={todo.text}></EditTodo>
 
                     </li>
 

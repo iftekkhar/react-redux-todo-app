@@ -5,9 +5,10 @@ export const addTodo = text => ({
     id: nextTodoId++,
     text
 })
-export const updateTodo = id => ({
+export const updateTodo = (id, text) => ({
     type: 'UPDATE_TODO',
-    id
+    id,
+    text
 })
 export const deleteTodo = id => ({
     type: 'DELETE_TODO',

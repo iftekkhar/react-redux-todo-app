@@ -13,8 +13,12 @@ const todos = (state = [], action) => {
                 }
             ];
         case 'UPDATE_TODO':
-            return alert(action.text),
-                state;
+            return state.map(todo =>
+                (todo.id === action.id) ?
+                    { ...todo, text: action.text } :
+                    todo
+            )
+
 
         case 'DELETE_TODO':
             return state.filter(todo =>
