@@ -1,3 +1,4 @@
+import { Button, Grid } from '@material-ui/core';
 import React from 'react';
 import { connect } from 'react-redux';
 import FilterLink from './FilterLink';
@@ -8,13 +9,18 @@ const Filters = ({ dispatch }) => {
         dispatch(resetTodo());
     }
     return (
-        <div>
-            <span>Show:</span>
+        <Grid container
+            direction="row"
+            justify="center"
+            alignItems="center"
+        >
+
+            <h3>Show:</h3>
             <FilterLink filter={todoListFilters.SHOW_ALL}>All</FilterLink>
             <FilterLink filter={todoListFilters.SHOW_ACTIVE}>Active</FilterLink>
             <FilterLink filter={todoListFilters.SHOW_COMPLETED}>Completed</FilterLink>
-            <button style={{ marginLeft: '4px' }} onClick={resetList}>Reset</button>
-        </div>
+            <Button variant="contained" style={{ marginLeft: '10px' }} onClick={resetList}>Reset</Button>
+        </Grid>
     );
 };
 

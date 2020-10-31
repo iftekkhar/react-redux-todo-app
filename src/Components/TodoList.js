@@ -1,5 +1,7 @@
+import { Paper } from '@material-ui/core';
 import React from 'react';
 import { connect } from 'react-redux'
+import CompletedTodo from './CompletedTodo';
 import DeleteTodo from './DeleteTodo';
 import EditTodo from './EditTodo';
 import { todoListFilters, toggleTodo } from './Redux/Actions';
@@ -32,22 +34,29 @@ const mapDispatchToProps = dispatch => {
 
 const TodoList = ({ todos, toggleTodo }) => {
 
+
     return (
         <div>
             <ul>{
                 todos.map((todo) => (
 
-                    <li
+                    <Paper
+                        className="d-flex-space-between"
+                        elevation={3}
                         key={todo.id}
-                        style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+                        style={{ textDecoration: todo.completed ? 'line-through' : 'none', marginTop: '20px', padding: '10px' }}
                     >
+                        <div>
+                            <CompletedTodo toggleTodo={toggleTodo} todo={todo}></CompletedTodo>
+                            <span>{todo.text}</span>
+                        </div>
+                        <div>
+                            <EditTodo todoId={todo.id} todoText={todo.text}></EditTodo>
+                            <DeleteTodo todoId={todo.id}></DeleteTodo>
+                        </div>
 
-                        {todo.text}
-                        <button onClick={() => toggleTodo(todo.id)} >Complete</button>
-                        <DeleteTodo todoId={todo.id}></DeleteTodo>
-                        <EditTodo todoId={todo.id} todoText={todo.text}></EditTodo>
 
-                    </li>
+                    </Paper>
 
 
                 ))

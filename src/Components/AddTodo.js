@@ -1,23 +1,36 @@
-import React from 'react';
+import { Grid, Button, TextField } from '@material-ui/core';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { addTodo } from './Redux/Actions';
 
 const AddTodo = ({ dispatch }) => {
-
-    let input;
+    const [todo, setTodo] = useState('');
+    const handleSetTodo = e => {
+        setTodo(e.target.value);
+    }
     const addTask = e => {
         e.preventDefault();
-        if (!input.value.trim()) return;
-        dispatch(addTodo(input.value));
-        input.value = '';
+        if (todo) { dispatch(addTodo(todo)); }
+        else { alert('write somthing') }
+        setTodo('')
+
     }
     return (
-        <div>
-            <form onSubmit={addTask}>
-                <input ref={node => input = node}></input>
-                <button type="submit"> Add Todo</button>
-            </form>
-        </div>
+        <Grid container
+            direction="row"
+            justify="center"
+            alignItems="center">
+            <Grid item xs={12}>
+                <form onSubmit={addTask} className="d-flex-center">
+                    <Grid item xs={6} md={8}>
+                        <TextField fullWidth margin="normal" onChange={handleSetTodo} id="standard-basic" value={todo} label="List Your Todos..." />
+                    </Grid>
+
+                    <Button variant="contained" size="large" color="primary" type="submit"> Add Todo</Button >
+
+                </form>
+            </Grid>
+        </Grid>
     );
 };
 

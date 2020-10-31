@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { deleteTodo } from './Redux/Actions';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const DeleteTodo = ({ dispatch, todoId }) => {
     const handleDeleteTodo = id => {
         dispatch(deleteTodo(id));
     }
     return (
-        <button onClick={() => handleDeleteTodo(todoId)} >Delete</button>
+        <IconButton onClick={() => handleDeleteTodo(todoId)} aria-label="delete" color="secondary">
+            <DeleteIcon />
+        </IconButton>
+        // <button onClick={() => handleDeleteTodo(todoId)} >Delete</button>
     );
 };
 

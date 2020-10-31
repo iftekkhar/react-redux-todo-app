@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core';
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTodoListFilter } from './Redux/Actions';
@@ -12,13 +13,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 const FilterLink = ({ active, children, onClick }) => {
     return (
-        <button
+        <Button
+            variant="contained"
             onClick={onClick}
             disabled={active}
-            style={{ marginLeft: '4px' }}
+            style={{ marginLeft: '10px' }}
         >
             {children}
-        </button>
+        </Button>
     )
 }
 
