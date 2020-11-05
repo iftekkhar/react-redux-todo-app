@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { todoListFilters } from './Actions';
 
+
 const todos = (state = [], action) => {
     switch (action.type) {
+
         case 'ADD_TODO':
             return [
                 ...state,
@@ -12,13 +14,13 @@ const todos = (state = [], action) => {
                     completed: false
                 }
             ];
+
         case 'UPDATE_TODO':
             return state.map(todo =>
                 (todo.id === action.id) ?
                     { ...todo, text: action.text } :
                     todo
             )
-
 
         case 'DELETE_TODO':
             return state.filter(todo =>
@@ -33,12 +35,11 @@ const todos = (state = [], action) => {
                 (todo.id === action.id) ?
                     { ...todo, completed: !todo.completed } :
                     todo
-
             )
 
         default: return state;
     }
-}
+};
 const todoListFilter = (state = todoListFilters.SHOW_ALL, action) => {
 
     switch (action.type) {
@@ -47,7 +48,7 @@ const todoListFilter = (state = todoListFilters.SHOW_ALL, action) => {
         default: return state;
     }
 
-}
+};
 export default combineReducers({
     todos,
     todoListFilter

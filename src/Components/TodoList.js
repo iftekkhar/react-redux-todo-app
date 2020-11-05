@@ -8,29 +8,32 @@ import { todoListFilters, toggleTodo } from './Redux/Actions';
 
 const getTodoList = (todos, filter) => {
     switch (filter) {
+
         case todoListFilters.SHOW_ALL:
             return todos;
+
         case todoListFilters.SHOW_ACTIVE:
             return todos.filter(t => !t.completed);
+
         case todoListFilters.SHOW_COMPLETED:
             return todos.filter(t => t.completed);
+
         default:
             throw new Error('Unknown filter' + filter);
     }
-}
-
+};
 
 const mapStateToProps = state => {
     return ({
         todos: getTodoList(state.todos, state.todoListFilter)
     })
-}
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         toggleTodo: id => dispatch(toggleTodo(id))
-
     }
-}
+};
 
 const TodoList = ({ todos, toggleTodo }) => {
 
@@ -39,9 +42,7 @@ const TodoList = ({ todos, toggleTodo }) => {
         <div>
             <ul>{
                 todos.map((todo) => (
-
-                    <Paper
-                        className="d-flex-space-between"
+                    <Paper className="d-flex-space-between"
                         elevation={3}
                         key={todo.id}
                         style={{ textDecoration: todo.completed ? 'line-through' : 'none', marginTop: '20px', padding: '10px' }}
@@ -54,14 +55,9 @@ const TodoList = ({ todos, toggleTodo }) => {
                             <EditTodo todoId={todo.id} todoText={todo.text}></EditTodo>
                             <DeleteTodo todoId={todo.id}></DeleteTodo>
                         </div>
-
-
                     </Paper>
-
-
                 ))
             }
-
             </ul>
         </div>
     );

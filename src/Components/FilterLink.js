@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => dispatch(setTodoListFilter(ownProps.filter))
-})
+});
 
 const FilterLink = ({ active, children, onClick }) => {
     return (

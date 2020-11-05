@@ -5,16 +5,10 @@ import FilterLink from './FilterLink';
 import { resetTodo, todoListFilters } from './Redux/Actions';
 
 const Filters = ({ dispatch }) => {
-    const resetList = e => {
-        dispatch(resetTodo());
-    }
-    return (
-        <Grid container
-            direction="row"
-            justify="center"
-            alignItems="center"
-        >
+    const resetList = e => dispatch(resetTodo());
 
+    return (
+        <Grid container direction="row" justify="center" alignItems="center">
             <h3>Show:</h3>
             <FilterLink filter={todoListFilters.SHOW_ALL}>All</FilterLink>
             <FilterLink filter={todoListFilters.SHOW_ACTIVE}>Active</FilterLink>
