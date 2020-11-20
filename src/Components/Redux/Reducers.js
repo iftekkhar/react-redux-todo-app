@@ -40,6 +40,7 @@ const todos = (state = [], action) => {
         default: return state;
     }
 };
+
 const todoListFilter = (state = todoListFilters.SHOW_ALL, action) => {
 
     switch (action.type) {

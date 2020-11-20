@@ -8,6 +8,7 @@ const Filters = ({ dispatch }) => {
     const resetList = e => dispatch(resetTodo());
 
     return (
+
         <Grid container direction="row" justify="center" alignItems="center">
             <h3>Show:</h3>
             <FilterLink filter={todoListFilters.SHOW_ALL}>All</FilterLink>

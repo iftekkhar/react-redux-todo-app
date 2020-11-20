@@ -13,6 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 const FilterLink = ({ active, children, onClick }) => {
     return (
+
         <Button
             variant="contained"
             onClick={onClick}

@@ -8,6 +8,7 @@ const DeleteTodo = ({ dispatch, todoId }) => {
     const handleDeleteTodo = id => dispatch(deleteTodo(id));
 
     return (
+
         <IconButton onClick={() => handleDeleteTodo(todoId)} aria-label="delete" color="secondary">
             <DeleteIcon />
         </IconButton>

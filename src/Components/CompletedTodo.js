@@ -7,6 +7,7 @@ const CompletedTodo = ({ todo, toggleTodo }) => {
     const handleChange = () => setChecked(!checked);
 
     return (
+
         <Checkbox
             checked={checked}
             onChange={handleChange}

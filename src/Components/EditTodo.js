@@ -34,8 +34,8 @@ const EditTodo = ({ dispatch, todoId, todoText }) => {
         dispatch(updateTodo(todoListId, innerText));
         closeModal();
     }
-    // let input;
     return (
+
         <>
             <IconButton onClick={openModal} aria-label="edit"><EditIcon /></IconButton>
 

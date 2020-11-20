@@ -21,6 +21,7 @@ const AddTodo = ({ dispatch }) => {
     };
 
     return (
+
         <Grid container direction="row" justify="center" alignItems="center">
             <Grid item xs={12}>
                 <form onSubmit={addTask} className="d-flex-center">
