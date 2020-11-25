@@ -6,14 +6,15 @@ import NavBar from "./Components/NavBar";
 import { Container } from "@material-ui/core";
 
 function App() {
+
   return (
 
-    <Container maxWidth="sm">
+    < Container maxWidth="sm" >
       <NavBar></NavBar>
       <AddTodo />
       <TodoList />
       <Filters />
-    </Container>
+    </Container >
   );
 }
 

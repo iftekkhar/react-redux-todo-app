@@ -26,6 +26,9 @@ const todos = (state = [], action) => {
             return state.filter(todo =>
                 todo.id !== action.id
             )
+        case 'DELETE_COMPLETED_TODO':
+            return state.filter(todo => !todo.completed
+            )
 
         case 'RESET_TODO':
             return state = []

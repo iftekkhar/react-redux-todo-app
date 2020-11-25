@@ -15,6 +15,9 @@ export const deleteTodo = id => ({
     type: 'DELETE_TODO',
     id
 });
+export const deleteCompletedTodo = () => ({
+    type: 'DELETE_COMPLETED_TODO'
+});
 export const resetTodo = () => ({
     type: 'RESET_TODO'
 });
