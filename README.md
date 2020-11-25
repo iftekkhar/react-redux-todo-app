@@ -15,6 +15,7 @@
 4. Delete a todo list
 5. Resetting the todo app
 6. Filters: (Sort)
-7. Show all
-8. Show Active todos
-9. Show only completed Todos
+  - Show all
+  - Show Active todos
+  - Show only completed Todos
+  - Delete Completed Todos
